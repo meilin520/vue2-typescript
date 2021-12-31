@@ -1,40 +1,44 @@
 <template>
   <div id="app">
-    <the-header :text="currentPageName"/>
+    <the-header :text="currPageTitle" :left-arrow="false"/>
+    <router-view />
     <the-footer />
   </div>
 </template>
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { TheHeader, TheFooter } from '@/components/layout';
-import { mapGetters } from 'vuex';
+import { TheHeader, TheFooter } from './components/layout';
+import { Getter } from 'vuex-class';
 
 @Component({
   components: {
     TheHeader,
     TheFooter,
   },
-  computed: {
-    ...mapGetters(['currentPageName']),
-  },
 })
 
 export default class App extends Vue {
-
+  @Getter('currPageTitle')
+  private currPageTitle!: string;
 }
 </script>
 <style>
 html, body{
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 #app {
+  height: 100%;
+  padding-top: 46px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: #eeeeee;
 }
 
 #nav {

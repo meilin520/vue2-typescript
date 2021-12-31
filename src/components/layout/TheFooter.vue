@@ -1,16 +1,36 @@
 <template>
     <div class="the-footer">
-        <div class="tabbar">
-            <div class="tabbar-item">{{item}}</div>    
-        </div>
+        <van-tabbar v-model="active" @change="changeTabbar">
+            <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+            <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
+            <van-tabbar-item icon="shopping-cart-o">购物车</van-tabbar-item>
+            <van-tabbar-item icon="user-o">用户</van-tabbar-item>
+        </van-tabbar>
     </div>
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Tabbar, TabbarItem } from 'vant';
 
-@Component
+@Component({
+    components: {
+        [Tabbar.name]: Tabbar,
+        [TabbarItem.name]: TabbarItem,
+    },
+})
 export default class TheFooter extends Vue {
-  @Prop() private text!: string;
+    private active: number = 0;
+
+    // 切换tabbar事件
+    private changeTabbar(active: number): void {
+        // console.log(active);
+        switch (active) {
+            case 0: this.$router.push({path: '/'}); break;
+            case 1: this.$router.push({path: '/shop-category-view'}); break;
+            case 2: this.$router.push({path: '/shop-cart-view'}); break;
+            case 3: this.$router.push({path: '/user-view'}); break;
+        }
+    }
 }
 </script>
 <style scoped>
