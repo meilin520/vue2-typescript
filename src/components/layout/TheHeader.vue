@@ -29,13 +29,14 @@ export default class TheHeader extends Vue {
 }
 </script>
 <style scoped>
-    .the-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        text-align: center;
-        font-size: 16px;
-        font-family: Arial, Helvetica, sans-serif;
-    }
+  .the-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 </style>
