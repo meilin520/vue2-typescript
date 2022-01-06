@@ -70,6 +70,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Goods, Category } from '../interface/goods';
 import {
   Lazyload,
   Swipe,
@@ -87,25 +88,6 @@ import {
 } from 'vant';
 
 Vue.use(Lazyload);
-
-/**商品接口
- * [name description]
- * @type {[type]}
- */
-interface Goods {
-  id: number;
-  name: string;
-  image: string;
-}
-
-/**商品分类接口
- * [id description]
- * @type {[type]}
- */
-interface Category {
-  id: number;
-  name: string;
-}
 
 @Component({
   components: {
