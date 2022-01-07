@@ -1,25 +1,29 @@
 <template>
   <div id="app">
-    <the-header :text="currPageTitle" :left-arrow="false"/>
     <router-view />
-    <the-footer />
+    <the-footer v-if="showFooter"/>
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
-import { TheHeader, TheFooter } from './components/layout';
+import { Component, Vue, Watch } from 'vue-property-decorator';
+import { TheFooter } from './components/layout';
 import { Getter } from 'vuex-class';
 
 @Component({
   components: {
-    TheHeader,
     TheFooter,
   },
 })
 
+
+
 export default class App extends Vue {
-  @Getter('currPageTitle')
-  private currPageTitle!: string;
+  private showFooter: boolean = true;
+
+  @Watch('$route')
+  public onRouteWatch(to: any, from: any, next: void) {
+    this.showFooter = to.meta.switch;
+  }
 }
 </script>
 <style>

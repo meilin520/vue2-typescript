@@ -33,12 +33,15 @@ export default class TheFooter extends Vue {
     }
 }
 </script>
-<style scoped>
+<style lang="less" scoped>
     .the-footer {
         padding: 15px;
         text-align: center;
         font-size: 14px;
         font-family: Arial, Helvetica, sans-serif;
         color: #dddddd;
+        .van-tabbar {
+          z-index: 2000;
+        }
     }
 </style>

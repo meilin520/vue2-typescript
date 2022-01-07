@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <the-header text="首页" :left-arrow="false"/>
     <van-pull-refresh v-model="refreshing" success-text="刷新成功" @refresh="onRefresh">
       <!-- 通告信息 -->
       <div class="notice">
@@ -31,7 +32,7 @@
       </div>
       <div class="grid__horizontal">
         <van-grid :border="false" :gutter="10" :column-num="2">
-          <van-grid-item>
+          <van-grid-item to="/shop-goods-details-view">
             <van-image src="https://img01.yzcdn.cn/vant/apple-1.jpg" />
           </van-grid-item>
           <van-grid-item>
@@ -41,7 +42,7 @@
             <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
           </van-grid-item>
           <van-grid-item>
-            <van-image src="https://img01.yzcdn.cn/vant/apple-3.jpg" />
+            <van-image src="https://img01.yzcdn.cn/vant/apple-4.jpg" />
           </van-grid-item>
         </van-grid>
       </div>
@@ -71,6 +72,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Goods, Category } from '../interface/goods';
+import { TheHeader, TheFooter } from '../components/layout';
 import {
   Lazyload,
   Swipe,
@@ -102,6 +104,8 @@ Vue.use(Lazyload);
     [NoticeBar.name]: NoticeBar,
     [List.name]: List,
     [PullRefresh.name]: PullRefresh,
+    TheHeader,
+    TheFooter,
   },
 })
 export default class Home extends Vue {
