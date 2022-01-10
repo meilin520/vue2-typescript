@@ -48,6 +48,14 @@ const routes: RouteConfig[] = [
     component: () => import('../views/ShopCartView.vue'),
   },
   {
+    path: '/address-list-view',
+    name: 'AddressListView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/AddressListView.vue'),
+  },
+  {
     path: '/user-view',
     name: 'UserView',
     meta: {
