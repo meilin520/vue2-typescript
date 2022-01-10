@@ -169,7 +169,7 @@ export default class Home extends Vue {
 
   // 搜索
   private onSearch(value: string): void {
-    // console.log(value);
+    // console.log(value)
   }
   // 清空搜索
   private onClearSearch(): void {

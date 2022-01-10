@@ -41,7 +41,7 @@ interface SkuMessage {
 interface PlaceholderMap {
   text?: string;
   tel?: string;
-  [proName: string]: any;
+  [propName: string]: any;
 }
 
 interface InitialMeesage {
