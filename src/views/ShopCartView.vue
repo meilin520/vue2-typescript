@@ -95,7 +95,7 @@ export default class ShopCartView extends Vue {
   }
 
   // 改变选中商品状态
-  set checkedAll(value: boolean): void {
+  set checkedAll(value: boolean) {
     this.cartGoodsList.forEach((element) => {
       element.checked = value;
     });
@@ -125,7 +125,7 @@ export default class ShopCartView extends Vue {
   get totalPrice(): number {
     let price = 0;
     if (this.someChecked) {
-      price = this.checkedCartGoodsList.reduce((sum, item) => sum + item.price * item.num, 0);
+      price = this.checkedCartGoodsList.reduce((sum, item) => sum + (item.price || 0) * (item.num || 0), 0);
     }
     return price * 100;
   }

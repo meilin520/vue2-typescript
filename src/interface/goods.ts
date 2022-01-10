@@ -9,7 +9,7 @@ export interface Goods {
   num?: number;
   price?: number;
   stock?: number;
-  desc?: number;
+  desc?: string;
   categoryId?: string;
   categoryName?: string;
   tags?: string[];
