@@ -56,6 +56,14 @@ const routes: RouteConfig[] = [
     component: () => import('../views/AddressListView.vue'),
   },
   {
+    path: '/address-list-edit-view/:type',
+    name: 'AddressListEditView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/AddressListEditView.vue'),
+  },
+  {
     path: '/user-view',
     name: 'UserView',
     meta: {
