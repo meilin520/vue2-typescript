@@ -87,6 +87,14 @@ const routes: RouteConfig[] = [
     },
     component: () => import('../views/CouponListView.vue'),
   },
+  {
+    path: '/feedback-view',
+    name: 'FeedbackView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/FeedbackView.vue'),
+  },
 ];
 
 // 解决导航栏或者底部导航tabBar中的vue-router在3.0版本以上频繁点击菜单报错的问题。

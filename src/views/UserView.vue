@@ -21,7 +21,7 @@
       <div class="cell-list">
         <van-cell title="优惠券" value="2张可用" is-link to="/coupon-list-view"/>
         <van-cell title="收货地址" value="未设置" is-link to="/address-list-view"/>
-        <van-cell title="反馈意见" is-link />
+        <van-cell title="意见反馈" is-link to="/feedback-view" />
         <van-cell title="设置" is-link />
       </div>
     </div>
