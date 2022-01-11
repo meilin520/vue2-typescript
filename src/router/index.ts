@@ -95,6 +95,30 @@ const routes: RouteConfig[] = [
     },
     component: () => import('../views/FeedbackView.vue'),
   },
+  {
+    path: '/setting-view',
+    name: 'SettingView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/SettingView.vue'),
+  },
+  {
+    path: '/setting-account-safe-view',
+    name: 'SettingAccountSafeView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/SettingAccountSafeView.vue'),
+  },
+  {
+    path: '/account-safe-view',
+    name: 'AccountSafeView',
+    meta: {
+      switch: false,
+    },
+    component: () => import('../views/AccountSafeView.vue'),
+  },
 ];
 
 // 解决导航栏或者底部导航tabBar中的vue-router在3.0版本以上频繁点击菜单报错的问题。
