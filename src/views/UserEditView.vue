@@ -8,7 +8,6 @@
         <van-uploader v-model="form.uploader" />
       </template>
     </van-field>
-    <van-field v-model="form.password" type="password" name="密码" label="密码" placeholder="密码" :rules="[{ required: true, message: '请填写密码' }]" />
     <van-field v-model="form.signText" name="签名" label="个性签名" placeholder="个性签名"/>
     <div style="margin: 16px;">
       <van-button round block type="info" native-type="submit">提交</van-button>
@@ -40,7 +39,6 @@ interface UploaderInfo {
 interface FormInfo {
   username: string;
   uploader?: UploaderInfo[];
-  password: string;
   signText?: string;
 }
 
@@ -56,7 +54,6 @@ interface FormInfo {
 export default class UserEditView extends Vue {
   private form: FormInfo = {
     username: '',
-    password: '',
     uploader: [{url: 'https://img01.yzcdn.cn/vant/cat.jpeg'}],
     signText: '',
   };
