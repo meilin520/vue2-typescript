@@ -1,6 +1,6 @@
 <template>
   <div class="address-list">
-    <the-header text="购物车" :left-arrow="true"/>
+    <the-header text="收货地址信息" :left-arrow="true"/>
     <div class="address-top">
       <van-address-list
         v-model="chosenAddressId"
